@@ -1,0 +1,4 @@
+spacy
+PyPDF2
+scikit-learn
+streamlit
