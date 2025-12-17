@@ -17,8 +17,18 @@ SKILLS = [
     "python", "java", "sql", "machine learning",
     "data science", "deep learning", "nlp",
     "tensorflow", "pandas", "numpy",
-    "git", "docker", "aws"
+    "git", "docker", "aws","python", "java", "sql", "c", "c++", "c#", "javascript", "typescript",
+    "php", "ruby", "go", "rust", "html", "css","react", "angular", "vue", "next.js", "django", "flask", "spring", "express", "node.js",
+    "aws", "azure", "google cloud", "gcp", "heroku",
+    "docker", "kubernetes", "terraform", "git",
+    "penetration testing", "ethical hacking", "network security",
+    "firewall", "cryptography", "incident response",
+    "figma", "adobe xd", "sketch", "wireframing", "prototyping", "user research",
+    "excel", "tableau", "power bi", "hadoop", "spark", "big data",
+    "data visualization", "statistics",
+    "linux", "bash", "shell scripting", "jira", "agile", "scrum"
 ]
+
 
 def extract_skill_from_jd(jd_text):
     jd_text = jd_text.lower()
