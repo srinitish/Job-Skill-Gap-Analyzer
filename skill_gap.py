@@ -1,3 +1,4 @@
+import re
 import PyPDF2
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -32,11 +33,11 @@ SKILLS = [
 
 def extract_skill_from_jd(jd_text):
     jd_text = jd_text.lower()
-    return [skill for skill in SKILLS if skill in jd_text]
+    return [skill for skill in SKILLS if re.search(rf'\b{re.escape(skill)}\b',jd_text)] #regular express to extract the certain skill
 
 def extract_skill_from_resume(resume_text, jd_skills):
     resume_text = resume_text.lower()
-    return [skill for skill in jd_skills if skill in resume_text]
+    return [skill for skill in jd_skills if re.search(rf'\b{re.escape(skill)}\b',resume_text)]
 
 def skill_similarity(jd_text, resume_text):
     jd_skills = extract_skill_from_jd(jd_text)
@@ -54,8 +55,10 @@ def skill_similarity(jd_text, resume_text):
     
     return round(score * 100, 2)
 
-def skill_gap_analysis(jd_text,resume_text):
+def skill_gap_analysis(jd_text, resume_text):
     jd_skills = extract_skill_from_jd(jd_text)
     resume_skills = extract_skill_from_resume(resume_text, jd_skills)
-    missing = list(set(jd_skills)-set(resume_skills))
-    return missing
+    missing = list(set(jd_skills) - set(resume_skills))
+    matched = list(set(jd_skills) & set(resume_skills))
+    return {"matched": matched, "missing": missing}
+
