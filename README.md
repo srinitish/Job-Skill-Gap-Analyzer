@@ -1,90 +1,114 @@
-# 📊 Job-Skill-Gap-Analyzer
+# 📄 Resume–Job Description Skill Gap Analyzer  
+### AI-Powered Resume Matching & Skill Gap Analysis System
 
-![](banner.png)
-
-## 🔎 Overview
-Job-Skill-Gap-Analyzer is a lightweight NLP-based application that compares a resume against a job description to measure skill similarity and highlight missing skills. It uses **PyPDF2** for PDF text extraction and **scikit-learn (TF‑IDF + cosine similarity)** for calculating match scores. Designed for job seekers and recruiters, it provides quick insights into candidate fit.
-
----
-## 🌍 Real-World Use Case
-
-Recruitment today faces a major challenge: **matching the right candidates to the right jobs quickly and accurately**. Job descriptions often list dozens of required skills, while resumes vary in format and wording. Manually comparing them is time-consuming and prone to bias.
-
-**Job-Skill-Gap-Analyzer** solves this problem by automating the comparison process:
-
-- **For Job Seekers:**  
-  - Identify missing skills in their resume relative to a target job description.  
-  - Get a clear skill similarity score to tailor resumes more effectively.  
-  - Receive actionable insights into what to learn next (e.g., AWS, Docker, Machine Learning).  
-
-- **For Recruiters:**  
-  - Speed up candidate screening by highlighting skill matches and gaps.  
-  - Reduce manual effort in parsing resumes and job descriptions.  
-  - Improve fairness and consistency in evaluating applicants.  
-
-- **For Career Coaches & Educators:**  
-  - Help students align their resumes with industry expectations.  
-  - Provide measurable feedback on skill readiness for specific roles.  
-
-### 📌 Example Scenario
-A company is hiring a **Machine Learning Engineer** with AWS expertise.  
-- The job description requires skills like *Python, Machine Learning, AWS, Docker*.  
-- A candidate’s resume shows *Python, SQL, Pandas, Machine Learning*.  
-- The analyzer outputs:  
-  - **Skill Similarity:** 70%  
-  - **Matched Skills:** Python, Machine Learning  
-  - **Missing Skills:** AWS, Docker  
-
-This gives the candidate a clear roadmap to improve their profile and helps the recruiter quickly assess fit.
-
-## ✨ Features
-- 📂 Upload resume (PDF) and extract text  
-- 📝 Paste job description text  
-- ⚡ Calculate skill similarity using TF‑IDF + cosine similarity  
-- 🛠️ Identify missing skills from a curated skill list  
-- 🌐 Streamlit interface for easy use  
-
-![UI Screenshot](ui.png)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9+-blue" />
+  <img src="https://img.shields.io/badge/Streamlit-Web%20Application-red" />
+  <img src="https://img.shields.io/badge/Machine%20Learning-TF--IDF%20%26%20Cosine%20Similarity-green" />
+  <img src="https://img.shields.io/badge/Status-Production--Ready-success" />
+</p>
 
 ---
 
-## 🧰 Tech Stack
-- Python  
-- PyPDF2 → PDF text extraction  
-- scikit-learn → TF‑IDF + cosine similarity  
-- Streamlit → Web app interface  
+## Project Overview
 
-![Tech Stack](A modern infographic.png)
+The **Resume–Job Description Skill Gap Analyzer** is an intelligent recruitment-support application that evaluates how well a candidate’s resume matches a given job description. The system automatically extracts relevant skills from both the resume and the job description, computes a **resume–JD compatibility score**, and performs a **skill gap analysis** by identifying matched and missing skills.
+
+This project closely replicates the internal logic of **modern Applicant Tracking Systems (ATS)** used in real-world hiring pipelines and demonstrates the practical application of **Natural Language Processing (NLP)** and **machine learning similarity techniques** in HR technology.
 
 ---
 
-## 🚀 Pipeline
+## Application Preview
 
-![Pipeline Diagram](A clean infographic .png)
+<p align="center">
+  <em>Resume Upload and Job Description Input</em><br/>
+  <img src="input.png" />
+</p>
 
-1. **Resume Upload** → Extract text from PDF using PyPDF2  
-2. **Job Description Input** → Paste JD text into the app  
-3. **Skill Extraction** → Match JD text against a curated skills list  
-4. **Resume Skill Extraction** → Check which JD skills appear in the resume  
-5. **TF‑IDF Vectorization** → Convert JD skills and resume skills into vectors  
-6. **Cosine Similarity** → Compute skill similarity percentage  
-7. **Gap Analysis** → Identify missing skills  
-8. **Results Display** → Show similarity score, matched skills, missing skills  
+<p align="center">
+  <em>Resume–JD Matching Score</em><br/>
+  <img src="score.png" />
+  
+</p>
 
----
-
-## 📊 Example Output
-
-![Results Screenshot](result'.png)
-
-- **Skill Similarity:** 64.59%  
-- **Missing Skills:** spark, tensorflow, terraform, docker, hadoop, aws, big data  
+<p align="center">
+  <em>Skill Gap Analysis View</em><br/>
+  <img src="matching_missing.png" />
+</p>
 
 ---
 
-## ▶️ Usage
+## Key Features
+
+- Upload resumes in **PDF format**
+- Paste any **job description**
+- Automatic **skill extraction using regex-based NLP**
+- Resume matching using **TF-IDF Vectorization and Cosine Similarity**
+- Clear visualization of **matched skills and missing skills**
+- Lightweight, fast, and scalable architecture
+- Recruiter-friendly web interface built using **Streamlit**
+
+---
+
+The resume text is extracted using **PyPDF2**. Skills are identified using a predefined skill ontology and regular expressions. Only job-relevant skills are considered. These skills are converted into numerical vectors using **TF-IDF**, and **Cosine Similarity** is applied to calculate the final resume–job match percentage. The system then clearly displays matched and missing skills.
+
+This workflow mirrors the screening logic used by enterprise-level ATS platforms.
+
+---
+
+## 🌍 Real-World Application
+
+Modern recruitment faces a critical challenge: **efficiently matching the right candidates to the right roles**. Job descriptions often contain extensive skill requirements, while resumes differ widely in structure, terminology, and formatting. Manual comparison is not only time-consuming but also prone to inconsistency and unconscious bias.
+
+The **Resume–Job Description Skill Gap Analyzer** addresses this challenge by **automating resume–JD comparison using NLP and machine learning**, delivering faster, fairer, and data-driven hiring insights.
+
+### 🔹 For Job Seekers
+- Identify **missing or weak skills** relative to a target job role.
+- Obtain a **clear skill match percentage** to improve resume alignment.
+- Receive actionable insights on **what skills to learn next** (e.g., AWS, Docker, Machine Learning).
+- Make informed career decisions based on role-specific requirements.
+
+### 🔹 For Recruiters & Hiring Teams
+- Accelerate candidate screening by **instantly highlighting skill matches and gaps**.
+- Reduce manual effort in parsing resumes and job descriptions.
+- Ensure **fairness and consistency** in applicant evaluation.
+- Improve shortlisting accuracy during high-volume hiring.
+
+### 🔹 For Career Coaches & Educational Institutions
+- Help students align resumes with **industry expectations**.
+- Provide **measurable feedback** on skill readiness for specific roles.
+- Identify training gaps and design targeted upskilling programs.
+- Support placement cells with automated resume screening tools.
+
+### 🔹 Enterprise-Level Relevance
+This system mirrors the core logic of **Applicant Tracking Systems (ATS)** used by enterprises and recruitment platforms. It can be integrated into real-time hiring pipelines as a **resume pre-screening microservice**, improving efficiency and decision quality at scale.
+
+---
+
+## Technologies and Libraries Used
+
+**Programming Language**
+- Python 3.9+
+
+**Libraries and Frameworks**
+- PyPDF2 – PDF text extraction  
+- scikit-learn – TF-IDF Vectorizer and Cosine Similarity  
+- re – Regular expression-based skill extraction  
+- Streamlit – Web-based user interface  
+
+---
+
+
+
+---
+
+## How to Run the Project
+
+Install the required dependencies:
 ```bash
-git clone https://github.com/srinitish/Job-Skill-Gap-Analyzer.git
-cd Job-Skill-Gap-Analyzer
 pip install -r requirements.txt
 streamlit run app.py
+
+
+## System Workflow (Real-Time Pipeline)
+
